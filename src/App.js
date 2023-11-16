@@ -1,5 +1,4 @@
 import './App.css';
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
@@ -9,7 +8,7 @@ import Table from './components/Table';
 const App = () => {
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({
-    productName: '',
+    name: '', 
     quantityPerUnit: '',
     unitPrice: '',
     unitsInStock: '',
@@ -32,7 +31,7 @@ const App = () => {
       .then((response) => {
         setProducts([...products, response.data]);
         setNewProduct({
-          productName: '',
+          name: '', 
           quantityPerUnit: '',
           unitPrice: '',
           unitsInStock: '',
@@ -62,8 +61,8 @@ const App = () => {
           <input
             type="text"
             placeholder="Product Name"
-            value={newProduct.productName}
-            onChange={(e) => setNewProduct({ ...newProduct, productName: e.target.value })}
+            value={newProduct.name} 
+            onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })} 
           />
           <input
             type="text"
